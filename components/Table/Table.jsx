@@ -67,9 +67,10 @@ export default function Table({ data, columns }) {
       <table {...getTableProps()} style={{ border: "solid 1px blue" }}>
         <thead>
           {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
               {headerGroup.headers.map((column) => (
                 <th
+                  key={column.id}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   style={{
                     borderBottom: "solid 3px red",
@@ -103,10 +104,10 @@ export default function Table({ data, columns }) {
           {page.map((row, i) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr {...row.getRowProps()} key={row.id}>
                 {row.cells.map((cell) => {
                   return (
-                    <td {...cell.getCellProps()} style={{ padding: "0 15px" }}>
+                    <td {...cell.getCellProps()} style={{ padding: "0 15px" }} key={cell.id}>
                       {cell.render("Cell")}
                     </td>
                   );
