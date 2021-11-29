@@ -1,5 +1,3 @@
-# Project Link
-
 This is a [Next.js](https://nextjs.org/) project for Infinilake created by Abhishek Angira.
 
 ## Getting Started
